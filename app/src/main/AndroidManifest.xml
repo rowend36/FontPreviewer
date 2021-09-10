@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tmstudios.fontprev" >
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    package="com.tmstudios.fontprev">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:allowBackup="true" android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-		android:resizeableActivity = "true">
+        android:resizeableActivity="true">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-			android:excludeFromRecents="true">
+            android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-				<data android:mimeType="application/*"/>
                 <category android:name="android.intent.category.DEFAULT" />
-				
+                <data
+                    android:host="*"
+                    android:mimeType="application/octet-stream"
+                    android:scheme="content" />
+
             </intent-filter>
-			<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-				<data android:mimeType="font/*"/>
+                <data 
+                    android:host="*"
+                    android:scheme="content"
+                    android:mimeType="font/*" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
