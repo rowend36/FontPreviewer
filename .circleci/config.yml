@@ -1,13 +1,14 @@
 # Java Gradle CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
-#
 version: 2
+orbs:
+  android: circleci/android@1.0.3
 jobs:
   build:
-    docker:
+    #docker:
       # specify the version you desire here
-      - image: circleci/android
+      #- image: circleci/android
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
